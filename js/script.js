@@ -1,88 +1,13 @@
-/*
-var leftArrow = document.getElementById('left-arrow-link');
-var rightArrow = document.getElementById('right-arrow-link');
-var imagesInSlider = document.getElementsByClassName('active-slider');
-var all = document.querySelectorAll('.slider img');
-var moveLeft = 0;
-var moveRight = all.length;
-
-var percentageMoveToLeft = 0;
-var imageInSlider = document.getElementById('active-slider');
-
-//click on left arrow
-
-leftArrow.addEventListener('click', function(e){
-	
-	e.preventDefault();
-
-	if (!all[moveLeft+3]) {
-		return '';
-	} else {
-		moveRight -= 1;	
-	}
-
-	imagesInSlider[0].setAttribute('class','hide-image');
-	all[moveLeft+3].setAttribute('class','active-slider');
-
-
-	
-	for (var i = 0; i < imagesInSlider.length; i++) {
-		imagesInSlider[i].style.animation = "move-left 0.3s ease-out";
-	}
-
-	var clearAnimation = setInterval(clearAnimation, 300);
-
-	function clearAnimation() {
-		for (var i = 0; i < all.length; i++) {
-		all[i].style.animation = "";
-		}
-		clearInterval(clearAnimation);
-	}
-	
-
-	moveLeft++;	
-
-}) 
-
-rightArrow.addEventListener('click', function(e){
-	e.preventDefault();
-
-	if (!all[moveRight]) {
-		return '';
-	} else {
-		moveLeft -= 1;
-	}
-
-	imagesInSlider[2].setAttribute('class','hide-image');
-	all[all.length - moveRight - 1].setAttribute('class','active-slider');
-
-	for (var i = 0; i < imagesInSlider.length; i++) {
-
-			imagesInSlider[i].style.animation = "move-right 0.5s ease-out";
-	}
-
-	var clearAnimation = setInterval(clearAnimation, 500);
-
-	function clearAnimation() {
-		for (var i = 0; i < all.length; i++) {
-		all[i].style.animation = "";
-		}
-		clearInterval(clearAnimation);
-	}
-
-	moveRight++;
-})
-
-*/
-
-
-
 function Slider(numberOfImagesToDisplay, controlsActiveOrNot, positionOfControlArrows, sizeOfImages) {
 
-	this.controlsActiveOrNot = controlsActiveOrNot;
 	this.numberOfImagesToDisplay = numberOfImagesToDisplay;
+
+	this.controlsActiveOrNot = controlsActiveOrNot;
+
 	this.positionOfControlArrows = positionOfControlArrows;
+
 	this.sizeOfImages = sizeOfImages;
+	
 	this.moveLeft = 0;
 	this.moveRight = 0;
 }
