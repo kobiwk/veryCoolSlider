@@ -1,0 +1,94 @@
+@import "reset";
+@import "animate";
+
+$primary-color: black;
+
+@mixin border($pixels) {
+	border: $pixels solid $primary-color;
+}
+
+.slider-container {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	height: 20rem;
+	background-color: yellow;
+	z-index: 2;
+
+
+	.slider {
+		position: relative;
+		margin: 0 auto;
+		width: 95%;
+		overflow: hidden;
+
+		@keyframes move-left {
+			100% {
+		        transform: translate3d(0%, 0px, 0px);
+		    }
+		    
+		    0% {
+		        transform: translate3d(100%, 0px, 0px);
+		    }
+
+		}
+
+		@keyframes move-right {
+			0% {
+		        transform: translate3d(-100%, 0%, 0px);
+		    }
+		    
+		    100% {
+		        transform: translate3d(0%, 0%, 0px);
+		    }
+
+		}
+
+		img {
+			width: 33%;
+			height:20rem;
+			
+		}
+
+
+		.active-slider {
+			z-index: 1;
+			position: relative;
+			
+		}
+
+		.hide-image {
+			display:none;
+		}
+	}
+
+	#left-arrow {
+		position: absolute;
+		top: 110%;
+		left: 11%;
+		width: 0;
+		height: 0;
+		border-top: 60px solid transparent;
+  		border-bottom: 60px solid transparent;
+  		border-right: 60px solid $primary-color;
+		z-index: 999;
+
+	}
+
+
+	#right-arrow {
+		position: absolute;
+		bottom: -50%;
+		right: 15%;
+		width: 0;
+		height: 0;
+		border-top: 60px solid transparent;
+  		border-bottom: 60px solid transparent;
+  		border-left: 60px solid $primary-color;
+		z-index: 999;
+		margin: -15% 0 0 -25%;
+		
+	}
+
+	
+}
